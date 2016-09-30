@@ -1,7 +1,7 @@
 /*!
- * angular-endless-scroll.js v0.0.5
+ * angular-endless-scroll.js v0.1.0
  * http://davidchin.me
- * Copyright 2015 David Chin
+ * Copyright 2016 David Chin
  * MIT License
  */
 (function() {
@@ -47,6 +47,7 @@
       function throttle(fn, delay) {
         var timeout,
             previous = 0;
+
 
         return function() {
           var current = new Date().getTime(),
@@ -315,6 +316,9 @@
               lastVisibleItemIndex = itemIndex;
             }
           }, this);
+          /*
+
+          ! Buggy - the placeholder is sticky creating a large empty space above the scrollable items !
 
           // Create placeholder
           if (!this.placeholder && itemTagName) {
@@ -336,6 +340,7 @@
 
             this.placeholder.height(placeholderHeight);
           }
+          */
 
           // Add to items
           if (angular.isDefined(firstVisibleItemIndex) &&

@@ -26,6 +26,7 @@
         var timeout,
             previous = 0;
 
+
         return function() {
           var current = new Date().getTime(),
               remaining = delay - (current - previous),
@@ -293,6 +294,9 @@
               lastVisibleItemIndex = itemIndex;
             }
           }, this);
+          /*
+
+          ! Buggy - the placeholder is sticky creating a large empty space above the scrollable items !
 
           // Create placeholder
           if (!this.placeholder && itemTagName) {
@@ -314,6 +318,7 @@
 
             this.placeholder.height(placeholderHeight);
           }
+          */
 
           // Add to items
           if (angular.isDefined(firstVisibleItemIndex) &&
